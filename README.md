@@ -1,4 +1,4 @@
-# weibo-sdk
+# dustark-weibofansplatform-sdk
  
 微博粉丝平台SDK
 
