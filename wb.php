@@ -5,10 +5,7 @@ header( 'Content-type: text/html; charset=utf-8' );
 @require_once "CallbackSDK.php";
 @require_once "baidu_transapi.php";
 //设置app_key对应的app_secret
-define("APP_SECRET", "4fff170acbc64f5a85048ba6a44d0fca");
-define("TOKEN", "2.006qyvxBN2VBQD20815c9e0e2cLNiD");
-define("ROBOT_API", "http://www.tuling123.com/openapi/api");
-define("ROBOT_KEY", "3c3b7715d61f4b0697c075646d83e290");
+
 //初始化SDK
 $call_back_SDK = new CallbackSDK();
 $call_back_SDK->setAppSecret(APP_SECRET);
@@ -53,7 +50,6 @@ if (!empty($post_msg_str)) {
 	$post_text = $post_msg_str['text'];
 	$post_data = $post_msg_str['data'];
 	if (!isset($_SESSION['userinfo'])) {
-        //$userinfo = json_decode('{"id":1793782640,"idstr":"1793782640","class":1,"screen_name":"王少_Shenhu","name":"王少_Shenhu","province":"33","city":"10","location":"上海 杨浦区","description":"","url":"","profile_image_url":"http://tva1.sinaimg.cn/crop.0.4.750.750.50/6aeaf370jw8f4kstt3xmjj20ku0l2jtb.jpg","cover_image_phone":"http://ww4.sinaimg.cn/crop.0.0.640.640/7c85468fjw1e8yq7122ixj20hs0hsq3j.jpg","profile_url":"wangjunjie88","domain":"wangjunjie88","weihao":"","gender":"m","followers_count":0,"friends_count":0,"pagefriends_count":0,"statuses_count":0,"favourites_count":215,"created_at":"Tue Aug 17 14:29:50 +0800 2010","following":true,"allow_all_act_msg":false,"geo_enabled":true,"verified":false,"verified_type":220,"remark":"","insecurity":{"sexual_content":false},"status":{},"ptype":0,"allow_all_comment":false,"avatar_large":"http://tva1.sinaimg.cn/crop.0.4.750.750.180/6aeaf370jw8f4kstt3xmjj20ku0l2jtb.jpg","avatar_hd":"http://tva1.sinaimg.cn/crop.0.4.750.750.1024/6aeaf370jw8f4kstt3xmjj20ku0l2jtb.jpg","verified_reason":"","verified_trade":"","verified_reason_url":"","verified_source":"","verified_source_url":"","follow_me":true,"online_status":0,"bi_followers_count":59,"lang":"zh-cn","star":0,"mbtype":0,"mbrank":0,"block_word":0,"block_app":0,"credit_score":80,"user_ability":1024,"urank":33}',true);
         $userinfo = $call_back_SDK->getUserInfo($receiver_id);
         $_SESSION['userinfo'] = $userinfo;
         $_SESSION['overloadTime'] = 0;
