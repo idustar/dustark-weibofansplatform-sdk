@@ -3,11 +3,6 @@
 // 引入文字识别OCR SDK
 require_once '../AipOcr.php';
 
-// 定义常量
-const APP_ID = '9664586';
-const API_KEY = 'sdHwHRYkOxrt85Sg3zmGzfcS';
-const SECRET_KEY = 'YZ9qDhnzfwozd3AeaRxX38kFfkrlpMPj';
-
 
 // 初始化
 $aipOcr = new AipOcr(APP_ID, API_KEY, SECRET_KEY);
